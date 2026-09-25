@@ -1,7 +1,5 @@
 # Module Lab: Caesar Cipher Program Bug #4
-#
-# In a previous lab, you created a Caesar cipher program. This version of
-# the program is buggy. Use a debugger to find the bug and fix it.
+# Fixed version
 
 # Double the given alphabet
 def getDoubleAlphabet(alphabet):
@@ -21,7 +19,6 @@ def getCipherKey():
 # Encrypt message
 def encryptMessage(message, cipherKey, alphabet):
     encryptedMessage = ""
-    uppercaseMessage = ""
     uppercaseMessage = message.upper()
     for currentCharacter in uppercaseMessage:
         position = alphabet.find(currentCharacter)
@@ -32,14 +29,22 @@ def encryptMessage(message, cipherKey, alphabet):
             encryptedMessage = encryptedMessage + currentCharacter
     return encryptedMessage
 
-# Decrypt message
+# Decrypt message (Fixed to subtract the key correctly)
 def decryptMessage(message, cipherKey, alphabet):
-    decryptKey = -1 * int(cipherKey)
-    return encryptMessage(message, decryptKey, alphabet)
+    decryptedMessage = ""
+    uppercaseMessage = message.upper()
+    for currentCharacter in uppercaseMessage:
+        position = alphabet.find(currentCharacter)
+        newPosition = position - int(cipherKey)
+        if currentCharacter in alphabet:
+            decryptedMessage = decryptedMessage + alphabet[newPosition]
+        else:
+            decryptedMessage = decryptedMessage + currentCharacter
+    return decryptedMessage
 
 # Main program logic
 def runCaesarCipherProgram():
-    myAlphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    myAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     print(f'Alphabet: {myAlphabet}')
     myAlphabet2 = getDoubleAlphabet(myAlphabet)
     print(f'Alphabet2: {myAlphabet2}')
@@ -50,7 +55,7 @@ def runCaesarCipherProgram():
     myEncryptedMessage = encryptMessage(myMessage, myCipherKey, myAlphabet2)
     print(f'Encrypted Message: {myEncryptedMessage}')
     myDecryptedMessage = decryptMessage(myEncryptedMessage, myCipherKey, myAlphabet2)
-    print(f'Decrypted Message: {myEncryptedMessage}')
+    print(f'Decrypted Message: {myDecryptedMessage}')
 
 # Main logic
 runCaesarCipherProgram()

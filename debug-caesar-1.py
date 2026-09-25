@@ -1,0 +1,1 @@
+newPosition = position + int(cipherKey)
