@@ -1,18 +1,28 @@
+# Defining a list
 myFruitList = ["apple", "banana", "cherry"]
 print(myFruitList)
 print(type(myFruitList))
+
+# Accessing a list by index
 print(myFruitList[0])
 print(myFruitList[1])
 print(myFruitList[2])
+
+# Changing values in a list
 myFruitList[2] = "orange"
 print(myFruitList)
+
+# Defining a tuple (immutable)
 myFinalAnswerTuple = ("apple", "banana", "pineapple")
 print(myFinalAnswerTuple)
 print(type(myFinalAnswerTuple))
 
+# Accessing a tuple by index
 print(myFinalAnswerTuple[0])
 print(myFinalAnswerTuple[1])
 print(myFinalAnswerTuple[2])
+
+# Defining a dictionary (key-value pairs)
 myFavoriteFruitDictionary = {
   "Akua" : "apple",
   "Saanvi" : "banana",
@@ -21,6 +31,7 @@ myFavoriteFruitDictionary = {
 print(myFavoriteFruitDictionary)
 print(type(myFavoriteFruitDictionary))
 
+# Accessing dictionary values by key
 print(myFavoriteFruitDictionary["Akua"])
 print(myFavoriteFruitDictionary["Saanvi"])
 print(myFavoriteFruitDictionary["Paulo"])
