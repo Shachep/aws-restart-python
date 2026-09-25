@@ -1,0 +1,6 @@
+vin,make,model,year,range,topSpeed,zeroSixty,mileage
+vin-101,Acura,MDX,2020,300,130,6.4,15000
+vin-102,Audi,Q5,2021,350,130,5.9,12000
+vin-103,BMW,X5,2022,400,150,5.3,8000
+vin-104,Chevrolet,Tahoe,2019,450,115,6.7,25000
+vin-105,Ford,Explorer,2020,400,120,6.0,18000
