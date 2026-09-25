@@ -1,6 +1,6 @@
 # Creating a mixed-type list
-myMixedTypeList = [45, 290578, 1.02, True, "My dog is on the bed.", "45"]
+myMixedTypeList = [45, 29057, 1.5, True, "My dog is on the bed.", "45"]
 
-# Iterating through the list to print items and their data types
+# Using a for loop to iterate through the list and print each item's data type
 for item in myMixedTypeList:
-    print("{} is of the data type {}".format(item, type(item)))
+    print(f"Item: {item} | Data Type: {type(item)}")

@@ -1,45 +1,29 @@
-# Python version 3.11.16
-# -*- coding: utf-8 -*-
+# Python Software to Process Human Insulin Sequence
 
-# Store the human preproinsulin sequence in a variable called preproInsulin:
-preproInsulin = "malwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktr" \
-"reaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycn"
+# Importing the file contents
+with open('preproinsulin-seq-clean.txt') as f:
+    preproinsulin = f.read().strip()
 
-# Store the remaining sequence elements of human insulin in variables:
-lsInsulin = "malwmrllpllallalwgpdpaaa"
-bInsulin = "fvnqhlcgshlvealylvcgergffytpkt"
-aInsulin = "giveqcctsicslyqlenycn"
-cInsulin = "rreaedlqvgqvelgggpgagslqplalegslqkr"
+# Printing out the preproinsulin sequence length and content
+print("Preproinsulin length:", len(preproinsulin))
+print("Preproinsulin sequence:", preproinsulin)
 
-# Merge the results of the smaller insulin groupings into a single variable called insulin
-insulin = bInsulin + aInsulin
+# Loading the individual insulin sections
+with open('lsinsulin-seq-clean.txt') as f:
+    lsinsulin = f.read().strip()
 
-# Printing "the sequence of human insulin" to console using successive print() commands:
-print("The sequence of human preproinsulin:")
-print(preproInsulin)
+with open('binsulin-seq-clean.txt') as f:
+    binsulin = f.read().strip()
 
-# Printing to console using concatenated strings inside the print function (one-liner):
-print("The sequence of human insulin, chain a: " + aInsulin)
+with open('cinsulin-seq-clean.txt') as f:
+    cinsulin = f.read().strip()
 
-# Calculating the molecular weight of insulin  
-# Creating a list of the amino acid (AA) weights  
-aaWeights = {'A': 89.09, 'C': 121.16, 'D': 133.10, 'E': 147.13, 'F': 165.19,
-'G': 75.07, 'H': 155.16, 'I': 131.17, 'K': 146.19, 'L': 131.17, 'M': 149.21,
-'N': 132.12, 'P': 115.13, 'Q': 146.15, 'R': 174.20, 'S': 105.09, 'T': 119.12,
-'V': 117.15, 'W': 204.23, 'Y': 181.19}  
+with open('ainsulin-seq-clean.txt') as f:
+    ainsulin = f.read().strip()
 
-# Count the number of each amino acids  
-aaCountInsulin = ({x: float(insulin.upper().count(x)) for x in ['A', 'C',
-'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T',
-'V', 'W', 'Y']})  
-
-# Multiply the count by the weights  
-molecularWeightInsulin = sum({x: (aaCountInsulin[x]*aaWeights[x]) for x in
-['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R',
-'S', 'T', 'V', 'W', 'Y']}.values())  
-
-print("The rough molecular weight of insulin: " + str(molecularWeightInsulin))
-
-# Calculate error percentage compared to actual molecular weight (5807.63)
-molecularWeightInsulinActual = 5807.63
-print("Error percentage: " + str(((molecularWeightInsulin - molecularWeightInsulinActual)/molecularWeightInsulinActual)*100))
+# Verifying the lengths of each segment
+print("\nSegment Lengths Verification:")
+print("lsinsulin length:", len(lsinsulin))
+print("binsulin length:", len(binsulin))
+print("cinsulin length:", len(cinsulin))
+print("ainsulin length:", len(ainsulin))

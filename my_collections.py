@@ -1,28 +1,28 @@
-# Defining a list
+# Exercise 1: Introducing the list data type
 myFruitList = ["apple", "banana", "cherry"]
 print(myFruitList)
 print(type(myFruitList))
 
-# Accessing a list by index
+# Accessing a list by position
 print(myFruitList[0])
 print(myFruitList[1])
 print(myFruitList[2])
 
-# Changing values in a list
+# Changing the values in a list
 myFruitList[2] = "orange"
 print(myFruitList)
 
-# Defining a tuple (immutable)
+# Exercise 2: Introducing the tuple data type
 myFinalAnswerTuple = ("apple", "banana", "pineapple")
 print(myFinalAnswerTuple)
 print(type(myFinalAnswerTuple))
 
-# Accessing a tuple by index
+# Accessing a tuple by position
 print(myFinalAnswerTuple[0])
 print(myFinalAnswerTuple[1])
 print(myFinalAnswerTuple[2])
 
-# Defining a dictionary (key-value pairs)
+# Exercise 3: Introducing the dictionary data type
 myFavoriteFruitDictionary = {
   "Akua" : "apple",
   "Saanvi" : "banana",
@@ -31,7 +31,7 @@ myFavoriteFruitDictionary = {
 print(myFavoriteFruitDictionary)
 print(type(myFavoriteFruitDictionary))
 
-# Accessing dictionary values by key
+# Accessing a dictionary by name
 print(myFavoriteFruitDictionary["Akua"])
 print(myFavoriteFruitDictionary["Saanvi"])
 print(myFavoriteFruitDictionary["Paulo"])

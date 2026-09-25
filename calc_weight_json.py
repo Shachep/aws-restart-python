@@ -13,14 +13,11 @@ if data != "":
     print('aInsulin: ' + aInsulin)
     print('molecularWeightInsulinActual: ' + str(molecularWeightInsulinActual))
     
-    # Calculating the molecular weight of insulin  
+    # Calculating the molecular weight of insulin
     aaWeights = data['weights']
+    aaCountInsulin = {x: float(insulin.upper().count(x)) for x in ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']}
     
-    # Count the number of each amino acid  
-    aaCountInsulin = ({x: float(insulin.upper().count(x)) for x in ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']})  
-    
-    # Multiply the count by the weights  
-    molecularWeightInsulin = sum({x: (aaCountInsulin[x] * aaWeights[x]) for x in ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']}.values())  
+    molecularWeightInsulin = sum({x: (aaCountInsulin[x] * aaWeights[x]) for x in ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']}.values())
     
     print("The rough molecular weight of insulin: " + str(molecularWeightInsulin))
     print("Percent error: " + str(((molecularWeightInsulin - molecularWeightInsulinActual) / molecularWeightInsulinActual) * 100))
