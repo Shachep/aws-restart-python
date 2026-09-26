@@ -1,45 +1,28 @@
-# Python version: python3.11
-# coding: utf-8
+# Exercise 1: Introducing the string data type
+myString = "This is a string."
+print(myString)
 
-# Store the human preproinsulin sequence in a variable called preproinsulin:
-preproInsulin = "malwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktr" \
-"reaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycn"
+# Get the data type of the variable using type()
+print(type(myString))
 
-# Store the remaining sequence elements of human insulin in variables:
-lsInsulin = "malwmrllpllallalwgpdpaaa"
-bInsulin = "fvnqhlcgshlvealylvcgergffytpkt"
-aInsulin = "giveqcctsicslyqlenycn"
-cInsulin = "rreaedlqvgqvelgggpgagslqplalegslqkr"
+# Combine string text with the type function's output converted to a string
+print(myString + " is of the data type " + str(type(myString)))
 
-# Merge the results of the smaller insulin groupings into a single variable called insulin
-insulin = bInsulin + aInsulin
 
-# Printing "the sequence of human insulin" to console using successive print() commands:
-print("The sequence of human preproinsulin:")
-print(preproInsulin)
+# Exercise 2: Working with string concatenation
+firstString = "water"
+secondString = "fall"
+thirdString = firstString + secondString
+print(thirdString)
 
-# Printing to console using concatenated strings inside the print function (one-liner):
-print("The sequence of human insulin, chain a: " + aInsulin)
 
-# Calculating the molecular weight of insulin  
-# Creating a list of the amino acid (AA) weights  
-aaWeights = {'A': 89.09, 'C': 121.16, 'D': 133.10, 'E': 147.13, 'F': 165.19,
-'G': 75.07, 'H': 155.16, 'I': 131.17, 'K': 146.19, 'L': 131.17, 'M': 149.21,
-'N': 132.12, 'P': 115.13, 'Q': 146.15, 'R': 174.20, 'S': 105.09, 'T': 119.12,
-'V': 117.15, 'W': 204.23, 'Y': 181.19}  
+# Exercise 3: Working with input strings
+name = input("What is your name? ")
+print(name)
 
-# Count the number of each amino acid  
-aaCountInsulin = ({x: float(insulin.upper().count(x)) for x in ['A', 'C',
-'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T',
-'V', 'W', 'Y']})  
 
-# Multiply the count by the weights  
-molecularWeightInsulin = sum({x: (aaCountInsulin[x]*aaWeights[x]) for x in
-['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R',
-'S', 'T', 'V', 'W', 'Y']}.values())  
+# Exercise 4: Formatting output strings
+color = input("What is your favorite color?  ")
+animal = input("What is your favorite animal?  ")
 
-print("The rough molecular weight of insulin: " + str(molecularWeightInsulin))
-
-# Calculating error percentage
-molecularWeightInsulinActual = 5807.63
-print("Error percentage: " + str(((molecularWeightInsulin - molecularWeightInsulinActual)/molecularWeightInsulinActual)*100))
+print("{}, you like a {} {}!".format(name, color, animal))

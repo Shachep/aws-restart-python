@@ -1,7 +1,7 @@
 import csv
 import copy
 
-# Define the dictionary template for vehicle data
+# Define the dictionary template for your vehicle data
 myVehicle = {
     "vin" : "<empty>",
     "make" : "<empty>" ,
@@ -13,14 +13,14 @@ myVehicle = {
     "mileage" : 0
 }
 
-# Print dictionary keys and values
+# Print the initial keys and values to verify
 for key, value in myVehicle.items():
-    print("{} : {}".format(key,value))
+    print("{} : {}".format(key, value))
 
-# Define an empty list for the inventory
+# Initialize an empty list to hold the car fleet inventory
 myInventoryList = []
 
-# Read the CSV file and store data into memory
+# Read the CSV file and populate the inventory list
 with open('car_fleet.csv') as csvFile:
     csvReader = csv.reader(csvFile, delimiter=',')  
     lineCount = 0  
@@ -43,8 +43,8 @@ with open('car_fleet.csv') as csvFile:
             lineCount += 1  
     print(f'Processed {lineCount} lines.')
 
-# Print the final car inventory list
+# Print the final car inventory from the list
 for myCarProperties in myInventoryList:
     for key, value in myCarProperties.items():
-        print("{} : {}".format(key,value))
+        print("{} : {}".format(key, value))
     print("-----")
